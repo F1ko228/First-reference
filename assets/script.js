@@ -1,23 +1,19 @@
-function multiplyNumeric(obj) {
-    for ( let key in obj) {
-        if (typeof obj[key] == 'number') {
-            obj[key] *= 2;
-        }
-    }   
-};
+"use strict";
 
-let menu = {
-    weight: 200,
-    height: 300,
-    title: "My menu",
+let calculator = {
+    read() {
+        this.meaning_1 = +prompt("Введите значение 1", "");
+        this.meaning_2 = +prompt("Введите значение 2", "");
+    },
+    sum() {
+        return this.meaning_1 + this.meaning_2;
+    },
+    mul() {
+        return this.meaning_1 * this.meaning_2;
+    },
 };
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
 
-for ( let key in menu) {
-    alert(menu[key])
-};
 
-multiplyNumeric(menu);
-
-for ( let key in menu) {
-    alert(menu[key])
-};
