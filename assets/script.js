@@ -1,24 +1,26 @@
 "use strict";
 
-function Calculator() {
+function Accumulator(startingValue) {
+    if (!new.target) {
+        return new Accumulator(value_2);
+    }
+    this.value = startingValue;
     this.read = function() {
-        this.meaning_1 = +prompt('Введите первое значение', "");
-        this.meaning_2 = +prompt('Введите второе значение', "");
-    };
-
-    this.sum = function() {
-        return this.meaning_1 + this.meaning_2;
-    };
-
-    this.mul = function() {
-        return this.meaning_1 * this.meaning_2;
-    };
+        this.meaning = +prompt("Введите значение", "");
+        this.value = this.value + this.meaning;
+        return this.value;
+    }
 };
 
+let value_2 = +prompt("Введите значение", "");
 
-let calculator = new Calculator();
-calculator.read();
+let accumulator = new Accumulator(value_2);
 
-alert( `Сумма чисел ${calculator.meaning_1} и ${calculator.meaning_2} равна ` + calculator.sum() );
-alert( `Произведение чисел ${calculator.meaning_1} и ${calculator.meaning_2} равно ` + calculator.mul() );
+accumulator.read();
+
+alert(`Сумма всех чисел равна ${accumulator.value}`);
+
+   
+
+
 
