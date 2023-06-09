@@ -1,19 +1,15 @@
 "use strict";
 
-let calculator = {
-    read() {
-        this.meaning_1 = +prompt("Введите значение 1", "");
-        this.meaning_2 = +prompt("Введите значение 2", "");
-    },
-    sum() {
-        return this.meaning_1 + this.meaning_2;
-    },
-    mul() {
-        return this.meaning_1 * this.meaning_2;
-    },
+function User(name) {
+    this.name = name;
+    if (!new.target) {
+        return new User(name);
+    };
 };
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+
+let nikita = new User('Nikita');
+
+alert(nikita.name);
+
 
 
