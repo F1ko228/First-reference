@@ -1,24 +1,16 @@
 "use strict";
 
-function Accumulator(startingValue) {
-    if (!new.target) {
-        return new Accumulator(value_2);
-    }
-    this.value = startingValue;
-    this.read = function() {
-        this.meaning = +prompt("Введите значение", "");
-        this.value = this.value + this.meaning;
-        return this.value;
-    }
+function sum(a, b) {
+    alert(meaning_1);
+    alert(meaning_2);
+    return a + b;
 };
 
-let value_2 = +prompt("Введите значение", "");
+let meaning_1 = +prompt("Введите значение первого числа", "");
+let meaning_2 = +prompt("Введите значение второго числа", "");
 
-let accumulator = new Accumulator(value_2);
 
-accumulator.read();
-
-alert(`Сумма всех чисел равна ${accumulator.value}`);
+alert(sum (meaning_1, meaning_2) );
 
    
 
