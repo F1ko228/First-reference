@@ -1,16 +1,13 @@
 "use strict";
 
-function sum(a, b) {
-    alert(meaning_1);
-    alert(meaning_2);
-    return a + b;
+function random (min, max) {
+    return min + Math.random() * (max - min);
 };
 
-let meaning_1 = +prompt("Введите значение первого числа", "");
-let meaning_2 = +prompt("Введите значение второго числа", "");
+alert( random(1, 30) );
 
 
-alert(sum (meaning_1, meaning_2) );
+
 
    
 
