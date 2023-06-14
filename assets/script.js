@@ -1,22 +1,14 @@
 "use strict";
 
-function truncate(str, maxlength) {
-    if (str == null) {
-        alert("Вы не ввели строчку, пожалуйста, повторите попытку");
-    };
-    if (str.length <= maxlength) {
-        return str;
-    };
-    if (str.length > maxlength) {
-        str = str.slice(0, maxlength - 1);
-        str = str + "...";
-        return str;
-    };
-}
+let arr = ["Джаз", "Блюз",];
 
-alert( truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) ); 
-alert( truncate("Всем привет!", 20) );
-   
+arr.push("Рок-н-ролл");
 
+arr[Math.floor((arr.length - 1) / 2)] = "Классика";
 
+arr.shift();
 
+arr.unshift("Регги");
+arr.unshift("Рэп");
+
+alert(arr);
