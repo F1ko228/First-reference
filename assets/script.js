@@ -1,17 +1,21 @@
 "use strict";
 
-function ucFirst(str) {
-    let firstLetter = str[0].toUpperCase();
-    return firstLetter + str.slice(1);
-};
+function truncate(str, maxlength) {
+    if (str == null) {
+        alert("Вы не ввели строчку, пожалуйста, повторите попытку");
+    };
+    if (str.length <= maxlength) {
+        return str;
+    };
+    if (str.length > maxlength) {
+        str = str.slice(0, maxlength - 1);
+        str = str + "...";
+        return str;
+    };
+}
 
-let string = "никита";
-
-alert(ucFirst(string)); 
-
-
-
-
+alert( truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) ); 
+alert( truncate("Всем привет!", 20) );
    
 
 
