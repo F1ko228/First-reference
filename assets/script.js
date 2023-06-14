@@ -1,10 +1,13 @@
 "use strict";
 
-function random (min, max) {
-    return min + Math.random() * (max - min);
+function ucFirst(str) {
+    let firstLetter = str[0].toUpperCase();
+    return firstLetter + str.slice(1);
 };
 
-alert( random(1, 30) );
+let string = "никита";
+
+alert(ucFirst(string)); 
 
 
 
