@@ -1,20 +1,14 @@
 "use strict";
 
-function filterRange(array, a, b) {
-    let arrInFn = [];
-    for(let i of array) {
+function filterRangeInPlace(array, a, b) {
+    for(let i = 0; i < array.length; i++) {
         if(i >= a && i <=b) {
-            arrInFn.unshift(i);
-        }
-        else {
-            continue;
+            array.splice(i, 1);
         }
     }
-    return arrInFn;
 };
 
 let arr = [5, 3, 8, 1];
-let filtered = filterRange(arr, 1, 4);
+filterRangeInPlace(arr, 1, 4);
 
-alert(filtered); 
 alert(arr); 
