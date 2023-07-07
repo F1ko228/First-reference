@@ -1,14 +1,9 @@
 "use strict";
 
-function filterRangeInPlace(array, a, b) {
-    for(let i = 0; i < array.length; i++) {
-        if(i >= a && i <=b) {
-            array.splice(i, 1);
-        }
-    }
-};
+let arr = [5, 2, 1, -10, 8];
 
-let arr = [5, 3, 8, 1];
-filterRangeInPlace(arr, 1, 4);
+arr.sort( (a, b) => a - b );  
 
-alert(arr); 
+arr.reverse();
+
+alert( arr ); 
