@@ -1,27 +1,20 @@
 "use strict";
 
-function camelize(str) {
-    let strInFn = str.split('');
-    alert(strInFn);
-    let indexValue;
-    while (indexValue != '-1') {
-        indexValue = strInFn.indexOf('-');
-        if(indexValue == '-1') break;
-        alert(indexValue);
-        strInFn.splice(indexValue, 2, strInFn[indexValue + 1].toUpperCase());
-        alert(strInFn);
-    }; 
-    // indexValue = strInFn.indexOf('-');
-    // alert(indexValue);
-    // strInFn.splice(indexValue, 2, strInFn[indexValue + 1].toUpperCase());
-    // alert(strInFn);
-    // if(strInFn.indexOf('-') >= 0) {
-    //     camelize(strInFn)   
-    // };
-    return strInFn.join('');
+function filterRange(array, a, b) {
+    let arrInFn = [];
+    for(let i of array) {
+        if(i >= a && i <=b) {
+            arrInFn.unshift(i);
+        }
+        else {
+            continue;
+        }
+    }
+    return arrInFn;
 };
 
-alert(camelize("backgound-color"));
-alert(camelize("list-style-image"));
-alert(camelize("-webkit-transition"));
+let arr = [5, 3, 8, 1];
+let filtered = filterRange(arr, 1, 4);
 
+alert(filtered); 
+alert(arr); 
