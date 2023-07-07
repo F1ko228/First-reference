@@ -1,9 +1,17 @@
 "use strict";
 
-let arr = [5, 2, 1, -10, 8];
+function copySorted(array) {
+    let arrayInFn = []; 
+    for(let i of array) {
+        arrayInFn.unshift(i)
+    };
+    arrayInFn = arrayInFn.sort( (a, b) => a.localeCompare(b) );
+    return arrayInFn;
+};
 
-arr.sort( (a, b) => a - b );  
+let arr = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(arr);
 
-arr.reverse();
-
+alert( sorted ); 
 alert( arr ); 
+
