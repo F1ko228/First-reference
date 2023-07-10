@@ -1,17 +1,11 @@
 "use strict";
 
-function copySorted(array) {
-    let arrayInFn = []; 
-    for(let i of array) {
-        arrayInFn.unshift(i)
-    };
-    arrayInFn = arrayInFn.sort( (a, b) => a.localeCompare(b) );
-    return arrayInFn;
-};
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
 
-let arr = ["HTML", "JavaScript", "CSS"];
-let sorted = copySorted(arr);
+let users = [ vasya, petya, masha ];
 
-alert( sorted ); 
-alert( arr ); 
+let names = users.map( item => item.name )
 
+alert( names ); // Вася, Петя, Маша
