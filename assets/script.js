@@ -1,20 +1,28 @@
 "use strict";
 
-function sortByAge(array) {
-  array.sort((a, b) => a.age - b.age)
-  return array;
+function shuffle(array) {
+  for(let i = array.lenght - 1; i > 0; i--) {
+    let j = Math.floor(Math.random * (i + 1));
+    [array[i], array[j]] = [array[i], array[j]];
+  }
 }
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+let count = {
+  "123": 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0,
+};
 
-let arr = [ vasya, petya, masha ];
+for(let i = 0; i < 1000; i++) {
+  let arr = [1, 2, 3];
+  shuffle(arr);
+  count[arr.join("")]++;
+}
 
-sortByAge(arr);
-
-// теперь: [vasya, masha, petya]
-alert(arr[0].name); // Вася
-alert(arr[1].name); // Маша
-alert(arr[2].name); // Петя
+for(let key in count) {
+  alert(`${key}: ${count[key]}`)
+};
 
