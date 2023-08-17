@@ -1,21 +1,16 @@
 "use strict";
 
-function getAverageAge(array) {
-  let countAge = 0;
-  let countUsers = 0;
-  for(let i = 0; i < array.length; i++) {
-    if(true) countUsers++;
+function unique(arr) {
+  let array = [];
+  let set = new Set(arr);
+  for(let value of set) {
+    array.push(value)
   }
-  array.map(user => countAge+= user.age);
-  let averageAge = countAge/countUsers;
-  if(countAge%countUsers !== 0) return averageAge.toFixed(1);
-  return averageAge;
+  return array;
 }
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
 
-let arr = [ vasya, petya, masha ];
-
-alert(getAverageAge(arr)); 
+alert( unique(values) ); 
