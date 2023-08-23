@@ -1,19 +1,12 @@
 "use strict";
 
-function sumSalaries(obj) {
-    let sum = 0;
-    obj = Object.values(obj);
-    for(let item of obj) {
-      sum += item;
-    }
-    return sum;
-}
-
-let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250,
+let user = { 
+  name: "John", 
+  years: 30, 
 };
 
-alert( sumSalaries(salaries) ); // 650
+let {name, years: age, isAdmin = "false"} = user;
 
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false
