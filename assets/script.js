@@ -1,16 +1,19 @@
 "use strict";
 
-function unique(arr) {
-  let array = [];
-  let set = new Set(arr);
-  for(let value of set) {
-    array.push(value)
-  }
-  return array;
+function sumSalaries(obj) {
+    let sum = 0;
+    obj = Object.values(obj);
+    for(let item of obj) {
+      sum += item;
+    }
+    return sum;
 }
 
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250,
+};
 
-alert( unique(values) ); 
+alert( sumSalaries(salaries) ); // 650
+
